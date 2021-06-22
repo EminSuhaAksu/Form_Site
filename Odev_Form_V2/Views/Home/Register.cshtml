@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<div id="content">
+
+
+    <!-- reklam alani -->
+    <!-- Admatic masthead 970x250 Ad Code START -->
+    <ins data-publisher="adm-pub-166715399597" data-ad-type="masthead" class="adm-ads-area" data-ad-network="163354846560" data-ad-sid="501" data-ad-width="970" data-ad-height="250"></ins>
+    <script src="//cdn2.admatic.com.tr/showad/showad.js" async=""></script>
+    <!-- Admatic masthead 970x250 Ad Code END -->
+
+    <div id="right-container" class="clearfix ">
+        <!-- -->
+
+
+
+
+
+        <div id="middle-block" class="col-md-9">
+
+
+
+            <div class="wbox clearfix">
+                <h1 class="title">
+                    <a href="#"> Üye ol</a>
+                </h1>
+            </div>
+            <div class="wbox">
+                <h5 class="wbox_title">Üyelik Formu</h5>
+                <div class="wbox_sub clearfix">
+                    <div class="row">
+                        <form action="/Home/Register" method="post">
+                            <div class="form-group col-md-7 ">
+                                <label class="control-label">üye adınız:</label>
+                                <input class="form-control" name="kuladi" type="text" value="" placeholder="üye adınız">
+                            </div>
+                            <div class="form-group col-md-7 ">
+                                <label class="control-label">şifre:</label>
+                                <input class="form-control" name="sifre" id="sifre" type="text" placeholder="şifre">
+                            </div>
+                            <div class="form-group col-md-7 ">
+                                <label class="control-label">e-posta:</label>
+                                <input class="form-control" name="email" id="email" type="text" value="" placeholder="e-posta">
+                            </div>
+                            <div class="form-group col-md-7 ">
+                                <label class="control-label">e-Ad Soyad:</label>
+                                <input class="form-control" name="adsoyad" type="text" value="" placeholder="Ad Soyad">
+                            </div>
+
+
+                            <div class="form-group col-md-12">
+                                <input type="submit" name="uyesubmit" value="gönder" class="btn btn-success">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <hr>
+        
+        </div> 
+    </div><!-- row fluid sonu esneklik veriyor-->
+</div>

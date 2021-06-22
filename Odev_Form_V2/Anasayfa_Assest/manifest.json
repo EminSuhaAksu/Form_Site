@@ -1,0 +1,12 @@
+{
+  "name": "inci sozluk",
+  "short_name": "incisozluk",
+  "start_url": "/?utm_source=web_app_manifest",
+  "prefer_related_applications": true,
+  "related_applications": [
+    {
+      "platform": "play",
+      "id": "com.inci.sozluk"
+    }
+  ]
+}

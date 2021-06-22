@@ -1,0 +1,113 @@
+﻿@model Odev_Form_V2.Models.ViewModel.Admin_View_Model
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Admin_LayoutPage.cshtml";
+}
+
+<ul class="breadcrumb">
+    <li><a href="#">Anasayfa</a></li>
+    <li class="active">Entri</li>
+</ul>
+<!-- END BREADCRUMB -->
+<!-- PAGE TITLE -->
+<div class="page-title">
+    <h2><span class="fa fa-arrow-circle-o-left"></span> Entri Sayfamız</h2>
+</div>
+<!-- END PAGE TITLE -->
+<!-- PAGE CONTENT WRAPPER -->
+<div class="page-content-wrap">
+  
+    <div class="row"> 
+        <div class="col-md-12">
+
+            <!-- START DEFAULT DATATABLE -->
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table datatable">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TBL_Entri_Duzenle.Aciklama)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TBL_Entri_Duzenle.Konu_ID)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TBL_Entri_Duzenle.Kullanici_ID)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TBL_Entri_Duzenle.Aktif)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TBL_Entri_Duzenle.Eklenme_Tarihi)
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+
+                                @foreach (var item in Model.TBL_Entri)
+                                {
+                                    <tr>
+                                        <td>
+                                          @MvcHtmlString.Create(item.Aciklama)
+                                        </td>
+                                        <td>
+                                            @foreach (var x in Model.TBL_Konu)
+                                            {
+                                                if (item.Konu_ID == x.ID)
+                                                {
+                                              <p>@x.Ad</p>
+                                                }
+                                                else
+                                                {
+
+                                                }
+                                            }
+
+                                        </td>
+                                        <td>
+                                            @foreach (var x in Model.TBL_Kullanici)
+                                            {
+                                                if (item.Kullanici_ID == x.ID)
+                                                {
+                                                    <p>@x.KAD</p>
+                                                }
+                                                else
+                                                {
+
+                                                }
+                                            }
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Aktif)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Eklenme_Tarihi)
+                                        </td>
+                                        <td>
+                                           
+                                            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- END DEFAULT DATATABLE -->
+            <!-- START SIMPLE DATATABLE -->
+            <!-- END SIMPLE DATATABLE -->
+
+        </div>
+    </div>
+
+</div>
+<!-- PAGE CONTENT WRAPPER -->
+
+
+ 

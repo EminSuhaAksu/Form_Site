@@ -1,0 +1,145 @@
+@font-face {
+	font-family: 'icomoon';
+	src:url('fonts/icomoon0e1a.eot?jlw9gl');
+	src:url('fonts/icomoond41d.eot?#iefixjlw9gl') format('embedded-opentype'),
+		url('fonts/icomoon0e1a.woff?jlw9gl') format('woff'),
+		url('fonts/icomoon0e1a.ttf?jlw9gl') format('truetype'),
+		url('fonts/icomoon0e1a.svg?jlw9gl#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="ssicon-"], [class*=" ssicon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.ssicon-info-outline:before {
+	content: "\e61d";
+}
+
+.ssicon-info-large:before {
+	content: "\e61b";
+}
+
+.ssicon-chevron-right:before {
+	content: "\e609";
+}
+
+.ssicon-chevron-left:before {
+	content: "\e60a";
+}
+
+.ssicon-th-menu:before {
+	content: "\e60b";
+}
+
+.ssicon-done:before {
+	content: "\e607";
+}
+
+.ssicon-play-arrow:before {
+	content: "\e606";
+}
+
+.ssicon-keyboard-arrow-down:before {
+	content: "\e604";
+}
+
+.ssicon-keyboard-arrow-up:before {
+	content: "\e605";
+}
+
+.ssicon-person:before {
+	content: "\e617";
+}
+
+.ssicon-refresh:before {
+	content: "\e60e";
+}
+
+.ssicon-cabinet2:before {
+	content: "\e610";
+}
+
+.ssicon-time:before {
+	content: "\e615";
+}
+
+.ssicon-satellite:before {
+	content: "\e61a";
+}
+
+.ssicon-add:before {
+	content: "\e60c";
+}
+
+.ssicon-minus:before {
+	content: "\e60d";
+}
+
+.ssicon-search:before {
+	content: "\e608";
+}
+
+.ssicon-uniE600:before {
+	content: "\e600";
+}
+
+.ssicon-link-external:before {
+	content: "\f07f";
+}
+
+.ssicon-newspaper:before {
+	content: "\e60f";
+}
+
+.ssicon-spades:before {
+	content: "\e601";
+}
+
+.ssicon-clubs:before {
+	content: "\e602";
+}
+
+.ssicon-diamonds:before {
+	content: "\e603";
+}
+
+.ssicon-happy:before {
+	content: "\e613";
+}
+
+.ssicon-smiley:before {
+	content: "\e614";
+}
+
+.ssicon-sad:before {
+	content: "\e616";
+}
+
+.ssicon-wink:before {
+	content: "\e618";
+}
+
+.ssicon-cool:before {
+	content: "\e619";
+}
+
+.ssicon-facebook:before {
+	content: "\e611";
+}
+
+.ssicon-twitter:before {
+	content: "\e612";
+}
+

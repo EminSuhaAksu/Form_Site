@@ -1,0 +1,123 @@
+﻿@model Odev_Form_V2.Models.ViewModel.Home_Index_View_Model
+
+
+@{
+    ViewBag.Title = "Home Page";
+}
+<div class="page-container clearfix" id="main-wrap">
+    <div class="index-wrap clearfix">
+
+        <div style="margin-top: 10px!important;width: 1245px;margin: 0 auto;position: relative;text-align: center;">
+
+
+
+
+        </div>                
+        <div class="giris_list col-md-12">
+
+
+            <!-- <a id="cerceve_rek">
+                 <div id="gorsel">
+
+                     <script language="javascript1.2" type="text/javascript">
+                         //<![CDATA[
+                         document.write('<scr'+'ipt src="https://trgde.adocean.pl/_'+(new Date()).getTime()+'/ad.js?id=MZSRIW_UbOKfGRy7xf0ph.5_z8Dh_I9KM.xX3zMaZff.g7/nc=0/gdpr=0/gdpr_consent=/redir=" language="javascript"></scr'+'ipt>');
+                         //]]>
+                     </script>
+
+                 </div>
+                 <div style="display: none">
+                     <img src="//www.uludagsozluk.com/ax/?a=yenit&ne=banner_say&image=1&banner_id=1084&kampanya_id=518&rand=" style=" height:0px; width:0px; "/>
+                 </div>
+                 <div class="clearfix"></div>
+             </a>
+             -->
+
+
+
+
+ 
+            <ul class="bigindex-list clearfix wbox ">
+
+                @foreach (var item in Model.TBL_Konu.Take(10))
+                {
+
+                    <li class="clearfix ozel_list">
+                        <div class="trend_list_no trend_list_no_ozel">@item.ID</div>
+
+
+
+
+                        <div class="baslik-info">
+                            <a href="/Home/Entri_Detay/@item.ID" target="_blank">
+                                <div class="index-image">
+                                    <img src="@item.Kapak_Foto" />
+                                </div>
+                            </a>
+                            <a href="/Home/Entri_Detay/@item.ID">
+                                <div class="index-title">
+                                   @item.Ad               
+                                </div>
+                            </a>
+                            <p class="index-ilk_entry entry_210094926">
+                                Detaylar İçin Lütfen Detaylara Giriniz...
+                                   </p>
+                            <footer class="index-footer clearfix">
+                                <div class="bilgi">
+                                    @foreach (var x in Model.TBL_Kullanici.Where(x => x.ID == item.KID))
+                                    {
+                                        <i class="ssicon-person first"></i><a class="baslik_kul" href="/Home/Kullanici_Detay/@x.ID">@x.Ad_Soyad</a>
+                                    }
+
+                                    <i class="ssicon-time"></i><a href="#">@item.EKlenme_Tarihi.ToString("dd/MM/yyyy") </a>
+                                    <img src="/Anasayfa_Assest/c11.incisozluk.com.tr/res/incisozluk/11008/2/509752_sf.png" class="altsayfa_icon" />
+                                    @foreach (var x in Model.TBL_Kategori.Where(x => x.ID == item.Kategori_ID))
+                                    {
+                                        <a href="/Home/Kategori_Detay/@x.ID">@x.Ad</a>
+                                    }
+
+                                </div> 
+                            </footer>
+                        </div>
+                    </li>
+
+                }
+
+
+
+
+
+
+             
+
+
+                
+            </ul>
+        </div><div class="giris_sag col-md-3">
+          
+
+
+            <div class="altinci_sidebar wbox">
+                <h5 class="wbox_title">Kategoriler</h5>
+                <ul>
+                    @foreach (var item in Model.TBL_Kategori)
+                    { 
+                        <li>
+
+                            <div class="li-bgimage" style="background-image:url(/Anasayfa_Assest/c12.incisozluk.com.tr/res/incisozluk/11507/1/747571_ma220.jpg)"></div>
+                            <div class="li-icerik">
+
+                                <a href="/Home/Kategori_Detay/@item.ID" style="">
+                                    @item.Ad <small>(60002)</small>
+                                </a>
+                            </div>
+
+                        </li>
+                    }
+
+                </ul>
+            </div>
+           
+        </div> 
+    </div>
+</div>     

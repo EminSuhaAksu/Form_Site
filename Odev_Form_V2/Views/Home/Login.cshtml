@@ -1,0 +1,128 @@
+﻿
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<br />
+<br />
+<br />
+<br /> 
+<div id="content">
+
+
+    <!-- reklam alani -->
+    <!-- Admatic masthead 970x250 Ad Code START -->
+    <ins data-publisher="adm-pub-166715399597" data-ad-type="masthead" class="adm-ads-area" data-ad-network="163354846560" data-ad-sid="501" data-ad-width="970" data-ad-height="250"></ins>
+    <script src="//cdn2.admatic.com.tr/showad/showad.js" async=""></script>
+    <!-- Admatic masthead 970x250 Ad Code END -->
+
+    <div id="right-container" class="clearfix ">
+        <!-- -->
+
+
+
+
+
+        <div id="middle-block" class="col-md-9">
+
+
+
+            <div class="wbox clearfix">
+                <h1 class="title"> kullanıcı girişi</h1>
+            </div>
+            <div class="wbox">
+                <div class="wbox_sub">
+                    <div class="row">
+                        <form action="/Home/Login" method="post">
+
+
+                            <div class="form-group col-md-12">
+                                <label class="control-label">üye adı:</label>
+                                <input class="form-control" name="kuladi" type="text" value="" placeholder="üye adı">
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label class="control-label">şifre:</label>
+                                <input class="form-control" name="sifre" type="password" id="sifre" placeholder="şifre">
+                            </div>
+                            <div class="form-group col-md-12">
+                                <input class="btn btn-success" type="submit" value="login">
+                            </div>
+
+                            <div class="col-md-7">
+
+                                <table border="0" cellspacing="1">
+                                    <tbody>
+
+                                        <tr>
+                                            <td>• şifrem falan yok diyorsan , <a href="/Home/Register">yeni üyelik</a></td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                            @if (TempData["Yanlis"] != null)
+                            {
+                                <div class="alert alert-danger" role="alert">
+                                    Şifreniz Veya Parolanız Yanlış...
+                                </div>
+                            }
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div><div id="sidebar" class="col-md-3">
+
+
+
+
+
+
+
+            <!-- <div class="wbox baslik_theme1">
+
+             </div>
+             -->
+            <!--<div class="wbox baslik_theme1">
+
+
+                    <a href="//openad.ulu.so/tikla/?c=wsop-inci-yeni&r=6&gno=" target="_blank"><img src="/zlib/theme/wsop/wbanner.jpg"></a>
+                    <div style="display: none">
+
+
+                    </div>
+
+                                <a href="//openad.ulu.so/tikla/?c=wsop-inci-yeni&r=6&gno=" target="_blank"><img src="/zlib/theme/wsop/wbanner.jpg"></a>
+
+
+                    <div class="clearfix"></div>
+
+
+
+
+
+            -->
+            <!-- Sağ Kısım 300x250
+                    <style>
+                        media (max-width: 768px) {
+                            .sag300{
+                                text-align: center;
+                                background: none!important;
+                                box-shadow: unset!important;
+                            }
+                        }
+                    </style>
+                     <div class="wbox baslik_theme1 sag300" style="background: none!important;">
+
+                       </div>
+            -->
+
+
+
+
+       
+        </div>
+    </div><!-- row fluid sonu esneklik veriyor-->
+</div>

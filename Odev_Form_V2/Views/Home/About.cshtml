@@ -1,0 +1,106 @@
+﻿@model IEnumerable<Odev_Form_V2.Models.Entities.TBL_Hakkimizda>
+@{
+    ViewBag.Title = "About";
+}
+<div id="content">
+
+
+    <!-- reklam alani -->
+    <!-- Admatic masthead 970x250 Ad Code START -->
+  
+    <div id="right-container" class="clearfix ">
+        <!-- -->
+
+
+
+
+
+        <div id="middle-block" class="col-md-9">
+
+
+
+            <div class="wbox clearfix">
+                <h1 class="title">
+                    <a href="/?sa=yardim&amp;sa2=hakkinda">hakkında</a>
+                </h1>
+            </div>
+             
+            <div class="wbox clearfix">
+                <div class="wbox_sub">
+                    <div style="text-align:center;"></div>
+                    <div id="sc" style="text-align:center;height:750px;cursor:default;overflow:hidden;width:100%;">
+                        <div style="width:1px;height:300px"></div>
+                       @foreach (var item in Model)
+                       {
+                           <p>
+                               @MvcHtmlString.Create(item.Aciklama)
+                           </p>
+                       }
+                        <div style="width:1px;height:300px"></div>
+                    </div>
+
+                    <div>
+                    </div>
+                    <script type="text/javascript">
+                        var o = document.getElementById("sc");
+                        function vov() { if (++o.scrollTop > o.scrollHeight - o.clientHeight) o.scrollTop = 0; setTimeout(vov, 20); }
+                        setTimeout(vov, 20);
+                    </script>
+
+                </div>
+            </div>
+        </div><div id="sidebar" class="col-md-3">
+
+
+
+
+
+
+
+            <!-- <div class="wbox baslik_theme1">
+
+             </div>
+             -->
+            <!--<div class="wbox baslik_theme1">
+
+
+                    <a href="//openad.ulu.so/tikla/?c=wsop-inci-yeni&r=6&gno=" target="_blank"><img src="/zlib/theme/wsop/wbanner.jpg"></a>
+                    <div style="display: none">
+
+
+                    </div>
+
+                                <a href="//openad.ulu.so/tikla/?c=wsop-inci-yeni&r=6&gno=" target="_blank"><img src="/zlib/theme/wsop/wbanner.jpg"></a>
+
+
+                    <div class="clearfix"></div>
+
+
+
+
+
+            -->
+            <!-- Sağ Kısım 300x250
+                    <style>
+                        edia (max-width: 768px) {
+                            .sag300{
+                                text-align: center;
+                                background: none!important;
+                                box-shadow: unset!important;
+                            }
+                        }
+                    </style>
+                     <div class="wbox baslik_theme1 sag300" style="background: none!important;">
+
+                       </div>
+            -->
+
+
+
+
+            <div style="clear:both;"></div>
+
+ 
+        </div>
+    </div><!-- row fluid sonu esneklik veriyor-->
+</div>

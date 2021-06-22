@@ -1,0 +1,259 @@
+﻿@model Odev_Form_V2.Models.ViewModel.Home_Index_View_Model
+
+@{
+    ViewBag.Title = "Yeni_Konu_Olustur";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="fb-root"></div>
+<div id="categories" class="clearfix">
+    <div id="category-list" class="category-list-wrapper">
+        <ul class="nav nav-collapse clearfix">
+            <li><a href="../../i/sozlukici/index.html">Sözlük İçi <small>2041008</small></a></li>
+            <li><a href="../../i/futbol/index.html">Futbol <small>126128</small></a></li>
+            <li><a href="../../i/kizlarsoruyor/index.html">Kızlar Soruyor <small>4902</small></a></li>
+            <li><a href="../../i/sacmalamaca/index.html">Saçmalamaca <small>1247411</small></a></li>
+            <li><a href="../../i/sorucevap/index.html">Soru Cevap <small>279500</small></a></li>
+            <li><a href="../../i/amacsiz/index.html">Sosyal Medya <small>15830</small></a></li>
+            <li><a href="../../i/ben/index.html">Ben <small>1633153</small></a></li>
+            <li><a href="../../i/kadinlar/index.html">Kadınlar <small>87339</small></a></li>
+            <li><a href="../../i/sozluk/index.html">Sözlük <small>820874</small></a></li>
+            <li><a href="../../i/basima-geldi/index.html">Başıma Geldi <small>352031</small></a></li>
+            <li><a href="../../i/inanc/index.html">İnanç <small>133855</small></a></li>
+            <li><a href="../../i/siyaset/index.html">Siyaset <small>266531</small></a></li>
+            <li><a href="../../i/ibretlik-tespitim/index.html">Tespit <small>911363</small></a></li>
+        </ul>
+        <div class="category-list-sag">
+            <div class="dropdown">
+                <a href="../../altinci/index.html">tümü</a>
+            </div>
+        </div>
+    </div>
+    <style>
+        #category-list {
+            position: relative;
+            padding: 0 140px 0 0;
+        }
+
+            #category-list .nav {
+                height: 25px;
+                overflow: hidden;
+            }
+
+        .category-list-sag {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+            .category-list-sag > div {
+                display: inline
+            }
+
+                .category-list-sag > div > a {
+                    line-height: 25px
+                }
+    </style>
+</div>
+
+<div class="page-container clearfix" id="main-wrap">
+
+    <div id="left-frame">
+
+
+        <div class="titles">
+
+            <h5 style="color:red;">
+                <center>
+                    <br />
+                    Konular
+                </center>
+            </h5>
+            <hr />
+            <ul class="index-list" id="sol-index-list">
+
+                @foreach (var item in Model.TBL_Konu)
+                {
+                    <li class="clearfix index-list-li">
+                        <a class="clearfix index-link" href="/Home/Entri_Detay/@item.ID" target="_blank">
+                            <div class="index-image">
+                                <img src="@item.Kapak_Foto" />
+                            </div>
+                        </a>
+                        <a class="clearfix index-content" href="/Home/Entri_Detay/@item.ID">
+                            <div class="index-title" title="">
+                                @item.Ad
+                            </div>
+                        </a>
+                    </li>
+                }
+
+
+
+
+            </ul>
+            <script>
+                if (window.sessionStorage) {
+                    var spEx = sessionStorage.getItem("sp");
+                    var spNew = 'gundem';
+                    if (spEx == spNew) {
+                        document.getElementById("sol-index-list").scrollTop = sessionStorage.getItem("sideScrollPosition");
+                    } else {
+                        sessionStorage.setItem("sp", spNew);
+                        sessionStorage.setItem("sideScrollPosition", 0);
+                    }
+                    spEx = spNew = null;
+                }
+            </script>
+        </div>
+    </div><!--left-frame sonu-->
+
+    <div id="content">
+
+
+        <!-- reklam alani -->
+        <!-- Admatic masthead 970x250 Ad Code START -->
+        <ins data-publisher="adm-pub-166715399597" data-ad-type="masthead" class="adm-ads-area" data-ad-network="163354846560" data-ad-sid="501" data-ad-width="970" data-ad-height="250"></ins>
+        <script src="../../../cdn2.admatic.com.tr/showad/showad.js" async></script>
+        <!-- Admatic masthead 970x250 Ad Code END -->
+
+        <div id="right-container" class="clearfix ">
+
+
+
+
+            <div id="middle-block" class="col-md-9">
+
+                <div class="col-md-12" style="background-color:white">
+                    <h5 class="wbox_title">Yeni Konu Açma</h5>
+                </div>
+                <br />
+                <br />
+                @if (Session["KID"] != null)
+                {
+
+
+                    <form method="post" action="/Home/Konu_Ac" enctype="multipart/form-data">
+                        <div class="col-md-12">
+                            <div class="col-md-12">
+                                <div class="col-md-6">
+                                    <label class="form-control">Başlık Giriniz</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" name="Ad" />
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="col-md-6">
+                                    <label class="form-control">Kategori Seçiniz...</label>
+                                </div>
+                                <div class="col-md-6">
+                                    <select class="form-control" name="Kategori_ID">
+                                        <option value="" selected>Seçiniz</option>
+                                        @foreach (var x in Model.TBL_Kategori)
+                                        {
+                                            <option value="@x.ID">@x.Ad</option>
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="col-md-6">
+                                    <label class="form-control">Kapak Fotoğrafı</label>
+                                </div>
+                                <div class="col-md-6">
+                               <input type="file" class="form-control" name="dd" />
+                                </div>
+                            </div>
+                            @Html.TextAreaFor(m => m.TBL_Entri_Duzenle.Aciklama, new { @class = "form-control" })
+                            <br />
+                            <button type="submit" class="btn btn-info col-md-12">Yorum Yap</button>
+                        </div>
+                    </form>
+
+                }
+                else
+                {
+                    <br />
+                    <div class="alert alert-danger" role="alert">
+                        Lütfen Giriş Yapınız..
+                    </div>
+                }
+            </div>
+            <div id="sidebar" class="col-md-3">
+
+
+
+
+
+
+
+                <!-- <div class="wbox baslik_theme1">
+
+                 </div>
+                 -->
+                <!--<div class="wbox baslik_theme1">
+
+
+                        <a href="//openad.ulu.so/tikla/?c=wsop-inci-yeni&r=6&gno=" target="_blank"><img src="/zlib/theme/wsop/wbanner.jpg"></a>
+                        <div style="display: none">
+
+
+                        </div>
+
+                                    <a href="//openad.ulu.so/tikla/?c=wsop-inci-yeni&r=6&gno=" target="_blank"><img src="/zlib/theme/wsop/wbanner.jpg"></a>
+
+
+                        <div class="clearfix"></div>
+
+
+
+
+
+                -->
+                <!-- Sağ Kısım 300x250
+                        <style>
+                            edia (max-width: 768px) {
+                                .sag300{
+                                    text-align: center;
+                                    background: none!important;
+                                    box-shadow: unset!important;
+                                }
+                            }
+                        </style>
+                         <div class="wbox baslik_theme1 sag300" style="background: none!important;">
+
+                           </div>
+                -->
+
+
+
+
+                <div style="clear:both;"></div>
+
+                <div class="altinci_sidebar wbox">
+                    <h5 class="wbox_title">Kategoriler</h5>
+                    <ul>
+                        @foreach (var item in Model.TBL_Kategori)
+                        {
+                            <li>
+
+                                <div class="li-bgimage" style="background-image:url(/Anasayfa_Assest/c12.incisozluk.com.tr/res/incisozluk/11507/1/747571_ma220.jpg)"></div>
+                                <div class="li-icerik">
+
+                                    <a href="/Home/Kategori_Detay/@item.ID" style="">
+                                        @item.Ad <small>(60002)</small>
+                                    </a>
+                                </div>
+
+                            </li>
+                        }
+
+                    </ul>
+                </div>
+
+            </div>
+        </div><!-- row fluid sonu esneklik veriyor-->
+    </div>
+</div>
+

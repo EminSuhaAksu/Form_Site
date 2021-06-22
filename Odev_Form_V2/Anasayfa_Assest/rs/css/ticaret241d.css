@@ -1,0 +1,21 @@
+@charset "utf-8";
+/* CSS Document */
+
+.urun_detay_wrap{overflow:visible;position: relative; }
+.urun_detay_wrap .media-object.big{max-width: 100%; max-height: 200px; margin: 0 auto 10px;}
+.fiyat_wrap{position: absolute; right: 0; top: -15px; background: #C7C7C7; color: #fff; padding: 3px 6px;}
+
+.urun_footer{width: 100%; float: left; margin: 15px 0 0 0;padding:5px}
+.urun_footer .sol{float: left;line-height: 28px;}
+.urun_footer .para{float: right; font-size: 13px; background: rgba(138, 138, 138, 0.64); padding: 5px 8px; color: #fff;}
+.urun_footer .tarih{float: left; font-size: 13px; margin: 0 5px 0 0;}
+.urun_footer .kuladi{float: left; font-size: 13px; font-weight: bold; margin: 0 5px 0 0;}
+.urun_footer .kuladi a{color:#000;}
+
+.tic_wrap{background: rgba(169, 169, 169, 0.06); padding: 5px; border: 1px solid rgba(165, 165, 165, 0.19); width: 99%; position:relative;}
+.tic_wrap h4{font-size: 14px;margin: 0 0 5px 0;}
+.tic_wrap h4 a{color: #000;}
+
+.tic_wrap img{width: 40px;height: 40px;margin: 0 5px 0 0;}
+.tic_wrap .para{}
+.tic_wrap .label{position:absolute; top:0;right:0}

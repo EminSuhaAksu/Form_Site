@@ -1,0 +1,84 @@
+﻿@model IEnumerable<Odev_Form_V2.Models.Entities.TBL_Kategori>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Admin_LayoutPage.cshtml";
+}
+
+<ul class="breadcrumb">
+    <li><a href="#">Anasayfa</a></li>
+    <li class="active">Kategori</li>
+</ul>
+<!-- END BREADCRUMB -->
+<!-- PAGE TITLE -->
+<div class="page-title">
+    <h2><span class="fa fa-arrow-circle-o-left"></span> Kategori Sayfamız</h2>
+</div>
+<!-- END PAGE TITLE -->
+<!-- PAGE CONTENT WRAPPER -->
+<div class="page-content-wrap">
+
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <a class="btn btn-info col-md-12" href="/Admin_Kategori/Create">Yeni Ekle</a>
+        </div>
+        <div class="col-md-12">
+
+            <!-- START DEFAULT DATATABLE -->
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table datatable">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Ad)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Aktif)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Eklenme_Tarihi)
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Ad)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Aktif)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Eklenme_Tarihi)
+                                        </td>
+                                        <td>
+                                            @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                                            @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                                            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- END DEFAULT DATATABLE -->
+            <!-- START SIMPLE DATATABLE -->
+            <!-- END SIMPLE DATATABLE -->
+
+        </div>
+    </div>
+
+</div>
+<!-- PAGE CONTENT WRAPPER -->
+
+
+
+ 

@@ -1,0 +1,97 @@
+﻿@model Odev_Form_V2.Models.Entities.TBL_Kullanici
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/Admin_LayoutPage.cshtml";
+}
+<ul class="breadcrumb">
+    <li><a href="#">Anasayfa</a></li>
+    <li class="active">Kullanicilar</li>
+    <li class="active">Sil</li>
+</ul>
+<!-- END BREADCRUMB -->
+<!-- PAGE TITLE -->
+<div class="page-title">
+    <h2><span class="fa fa-arrow-circle-o-left"></span> Kullanicilar Silme Sayfamız</h2>
+</div>
+<!-- END PAGE TITLE -->
+<!-- PAGE CONTENT WRAPPER -->
+<div class="page-content-wrap">
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <!-- START DEFAULT DATATABLE -->
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="table-responsive">
+
+                        <h3>Silmek İstediğinize Emin Misiniz ?</h3>
+                        <div>
+                            <h4>TBL_Kullanici</h4>
+                            <hr />
+                            <dl class="dl-horizontal">
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.KAD)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.KAD)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.Password)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Password)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.Ad_Soyad)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Ad_Soyad)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.Email)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Email)
+                                </dd>
+
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.Yetki)
+                                </dt>
+
+                                <dd>
+                                    @Html.DisplayFor(model => model.Yetki)
+                                </dd>
+
+                            </dl>
+
+                            @using (Html.BeginForm())
+                            {
+                                @Html.AntiForgeryToken()
+
+                                <div class="form-actions no-color">
+                                    <input type="submit" value="Delete" class="btn btn-default" /> |
+                                    @Html.ActionLink("Back to List", "Index")
+                                </div>
+                            }
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- END DEFAULT DATATABLE -->
+            <!-- START SIMPLE DATATABLE -->
+            <!-- END SIMPLE DATATABLE -->
+
+        </div>
+    </div>
+
+</div>

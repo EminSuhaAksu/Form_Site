@@ -1,0 +1,140 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+<br />
+
+
+<div id="content">
+
+
+    <!-- reklam alani -->
+    <!-- Admatic masthead 970x250 Ad Code START -->
+    <!-- Admatic masthead 970x250 Ad Code END -->
+
+    <div id="right-container" class="clearfix ">
+        <!-- -->
+
+
+   
+
+
+        <div id="middle-block" class="col-md-9">
+
+
+
+            <div class="wbox clearfix">
+                <h1 class="title">
+                    <a href="index2c01.html?sa=yardim&amp;sa2=iletisim">iletişim</a>
+                </h1>
+            </div>
+            <div class="wbox clearfix">
+                <h5 class="wbox_title">iletişim formu</h5>
+                <div class="wbox_sub">
+                    <form class="form-horizontal" method="post" action="/Home/İletisim_Gonder">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">isim & soyisim</label>
+                            <div class="col-sm-10">
+                                <input class="form-control" name="isim" required type="text" placeholder="isim & soyisim" value="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">e-posta</label>
+                            <div class="col-sm-10">
+                                <input class="form-control" name="eposta" required type="text" placeholder="e-posta" value="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">konu</label>
+                            <div class="col-sm-10">
+                                <input class="form-control" name="konu" required type="text" placeholder="konu" value="Konu">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">mesaj</label>
+                            <div class="col-sm-10">
+                                <textarea class="form-control" required name="mesaj" placeholder="mesaj"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-sm btn-success">gönder</button>
+                            </div>
+                        </div>
+                        <input type="hidden" name="referrer" value="w/can-yalan/index.html" />
+                    </form>
+
+                </div>
+            </div>
+            @if (TempData["Mesaj_Geldi"] != null)
+            {
+                <div class="alert alert-danger" role="alert">
+                    Mesajınız Gönderilmiştir...
+                </div>
+                <br />
+            }
+            else
+            {
+
+            }
+        </div><div id="sidebar" class="col-md-3">
+
+  
+
+
+
+
+
+    <!-- <div class="wbox baslik_theme1">
+
+    </div>
+    -->
+    <!--<div class="wbox baslik_theme1">
+
+
+            <a href="//openad.ulu.so/tikla/?c=wsop-inci-yeni&r=6&gno=" target="_blank"><img src="/zlib/theme/wsop/wbanner.jpg"></a>
+            <div style="display: none">
+
+
+            </div>
+
+                        <a href="//openad.ulu.so/tikla/?c=wsop-inci-yeni&r=6&gno=" target="_blank"><img src="/zlib/theme/wsop/wbanner.jpg"></a>
+
+
+            <div class="clearfix"></div>
+
+
+
+
+
+    -->
+    <!-- Sağ Kısım 300x250
+            <style>
+                media (max-width: 768px) {
+                    .sag300{
+                        text-align: center;
+                        background: none!important;
+                        box-shadow: unset!important;
+                    }
+                }
+            </style>
+             <div class="wbox baslik_theme1 sag300" style="background: none!important;">
+
+               </div>
+    -->
+
+
+
+
+    <div style="clear:both;"></div>
+
+
+    <script src="../promoviral.com/res/js/ad.js"></script>
+    <div id="prmv14387911415" data-theme="thm2" style="margin: 0px auto;width: 300px;"></div>
+    <script>prmv.init("14387911415");</script>
+    <div class="wbox">
+        <div class="fb-like-box" data-href="https://www.facebook.com/incisozluk" data-width="300" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div>
+    </div>
+</div>
+    </div><!-- row fluid sonu esneklik veriyor-->
+</div>

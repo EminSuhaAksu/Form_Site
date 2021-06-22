@@ -1,0 +1,123 @@
+﻿@model Odev_Form_V2.Models.ViewModel.Admin_View_Model
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Admin_LayoutPage.cshtml";
+}
+
+<ul class="breadcrumb">
+    <li><a href="#">Anasayfa</a></li>
+    <li class="active">Konular</li> 
+</ul>
+<!-- END BREADCRUMB -->
+<!-- PAGE TITLE -->
+<div class="page-title">
+    <h2><span class="fa fa-arrow-circle-o-left"></span> Konular Sayfamız</h2>
+</div>
+<!-- END PAGE TITLE -->
+<!-- PAGE CONTENT WRAPPER -->
+<div class="page-content-wrap">
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <!-- START DEFAULT DATATABLE -->
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table datatable">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TBL_Konu_Duzenle.Kapak_Foto)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TBL_Konu_Duzenle.Ad)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TBL_Konu_Duzenle.Aciklama)
+                                    </th>
+
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TBL_Konu_Duzenle.Kategori_ID)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TBL_Konu_Duzenle.KID)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TBL_Konu_Duzenle.EKlenme_Tarihi)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TBL_Konu_Duzenle.Aktif)
+                                    </th>
+                                    <th>Aktif Et</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.TBL_Konu)
+                                {
+                                <tr>
+                                    <td>
+                                        <img src="@item.Kapak_Foto" height="75" />
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Ad)
+                                    </td>
+                                    <td>
+                                        @MvcHtmlString.Create(item.Aciklama)
+                                    </td>
+
+                                    <td>
+                                        @foreach (var x in Model.TBL_Kategori.Where(x => x.ID == item.Kategori_ID))
+                                        {
+                                            <p>@x.Ad</p>
+                                        }
+
+                                    </td>
+                                    <td>
+                                        @foreach (var x in Model.TBL_Kullanici.Where(x => x.ID == item.KID))
+                                        {
+                                            <p>@x.Ad_Soyad</p>
+                                        }
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.EKlenme_Tarihi)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Aktif)
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-info" href="/Admin_Konular/Aktif/@item.ID">Aktif Et</a>
+
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Edit", "Edit", new { id = item.ID })
+
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Details", "Details", new { id = item.ID })
+
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                                    </td>
+                                </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- END DEFAULT DATATABLE -->
+            <!-- START SIMPLE DATATABLE -->
+            <!-- END SIMPLE DATATABLE -->
+
+        </div>
+    </div>
+
+</div>
+<!-- PAGE CONTENT WRAPPER -->
+
+
+ 

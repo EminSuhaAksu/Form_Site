@@ -1,0 +1,273 @@
+﻿@model Odev_Form_V2.Models.ViewModel.Home_Index_View_Model
+
+@{
+    ViewBag.Title = "Entri_Detay";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+ 
+ 
+<div class="page-container clearfix" id="main-wrap">
+
+    <div id="left-frame">
+    
+
+        <div class="titles">
+
+            <h5 style="color:red;">
+                <center>
+                    <br />
+                    Konular
+                </center>
+            </h5>
+            <hr />
+            <ul class="index-list" id="sol-index-list">
+
+                @foreach (var item in Model.TBL_Konu)
+                {
+                    <li class="clearfix index-list-li">
+                        <a class="clearfix index-link" href="/Home/Entri_Detay/@item.ID" target="_blank">
+                            <div class="index-image">
+                                <img src="@item.Kapak_Foto" />
+                            </div>
+                        </a>
+                        <a class="clearfix index-content" href="/Home/Entri_Detay/@item.ID">
+                            <div class="index-title" title="">
+                                @item.Ad
+                            </div>
+                        </a>
+                    </li>
+                }
+
+
+
+
+            </ul>
+            <script>
+                if (window.sessionStorage) {
+                    var spEx = sessionStorage.getItem("sp");
+                    var spNew = 'gundem';
+                    if (spEx == spNew) {
+                        document.getElementById("sol-index-list").scrollTop = sessionStorage.getItem("sideScrollPosition");
+                    } else {
+                        sessionStorage.setItem("sp", spNew);
+                        sessionStorage.setItem("sideScrollPosition", 0);
+                    }
+                    spEx = spNew = null;
+                }
+            </script>
+        </div>
+    </div><!--left-frame sonu--> 
+    
+    <div id="content">
+
+
+        <!-- reklam alani -->
+        <!-- Admatic masthead 970x250 Ad Code START -->
+        <ins data-publisher="adm-pub-166715399597" data-ad-type="masthead" class="adm-ads-area" data-ad-network="163354846560" data-ad-sid="501" data-ad-width="970" data-ad-height="250"></ins>
+        <script src="../../../cdn2.admatic.com.tr/showad/showad.js" async></script>
+        <!-- Admatic masthead 970x250 Ad Code END -->
+
+        <div id="right-container" class="clearfix ">
+
+
+
+
+            <div id="middle-block" class="col-md-9">
+
+                @foreach (var item in Model.TBL_Konu_Secili)
+                {
+                    <div class="wbox clearfix asfasdfsdfsa">
+                        <h1 class="title" id="baslik_24546969">
+                            <a href="/Home/Entri_Detay/@item.ID">@item.Ad</a>
+                            <div class="title_sag">
+                            </div>
+                        </h1>
+                    </div>
+                }
+
+                @foreach (var item in Model.TBL_Konu_Secili)
+                {
+
+
+                    <ol class="entry-list" start="2">
+                        <li class="entry wbox entry_210099612" value="1">
+                            <span class="list_value">1.</span>
+                            <div class="entry-text clearfix">
+                                <div class="entry-puan">
+                                    <img height="40" src="data:image/png;base64,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" alt="Alternate Text" />
+                                </div>
+
+
+                                <div class="entry-text-wrap " data-leng="27">
+                                  @item.Aciklama
+                                </div>
+
+
+                                <div class="entry-options yeni ">
+                                    <div style="display: inline-block;float: right;">
+                                        @foreach (var x in Model.TBL_Kullanici)
+                                        {
+                                            if (item.KID == x.ID)
+                                            {
+
+                                                <a class="username" style="display:inline-block; clear:both; float:none;" href="/Home/Kullanici_Detay/@x.ID">@x.KAD</a>
+                                            }
+
+                                        }
+                                        <br />
+                                        <a href="index.html" style="display:inline-block; float:none; clear:both;" class="entry-tarih"><small>@item.EKlenme_Tarihi.ToString("dd/MM/yyyy")</small></a>
+                                        <div class="clearfix"></div>
+                                    </div>
+
+                                </div><!-- entry-options -->
+
+                            </div><!-- entry-text clearfix -->
+                        </li><!-- entry wbox entry_210099612 -->
+
+
+                    </ol><!-- entry-list -->
+                }
+
+                @foreach (var item in Model.TBL_Entri)
+                {
+
+
+                    <ol class="entry-list" start="2">
+                        <li class="entry wbox entry_210099612" value="1">
+                            <span class="list_value">1.</span>
+                            <div class="entry-text clearfix">
+                                <div class="entry-puan">
+                                    <img height="40" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAXVBMVEX///9Zocl3sdJMm8ZUn8jV5vCSvtmszOGGt9Xh7fRVn8hGmcXn8PZNnMZrqs5xrM/O4e34+/3H3eu10+Xw9vqhx959s9Nlp8zA2enZ6PGZwtuJudelyd+Ovdi61ubuP4kMAAAD7UlEQVR4nO2d61LjMAxG69q92ZheQlsaYN//MWm3C7M708SW15Gi8J3/MHOqxE4kWZnNAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA02fTtKf54KyPry8yfs3ZRs+Bi3a+4/fbOWv48GHOHcdj8IyCV1y8sAouOQN4x4cFo+AqsAteFe0Tm+BGQvCq+MxmOGe+B7+wr0yCQiG8BtEwGbZOyNBYpvXUCF2kxsQVi+AL/07xhT+xGG7kDM2ZxXAhGEOepWYXxQwNj+H0YyhpOP37kGctFTRk2g8FDcNm6oY8t6GgoWXK1ogZMq0zkob7iRs6tiSGjGE0fFkaAUPvQsvmlzAcJuXtW9Z8cJ+hf1tWp204E6UpQytUQ6lLryHfcjAgMBwR+0vRQ4Iew12woeRRVo3h0y03X/K0rsbwnvYsiKIyw4IoajOkR1GdITmK+gypigoNiReqRkNaFFUakqKo05ASRaWGhChqNcyPolrD7CjqNcyNYm+e5riqTnMo/NkeNBzkRbE31+biAATzXpL/edRSkaUokS+N9r2OYZaiUM77mRzGx20xGYpCdQtnqIodjT/p5UaqMkNuxOhqbUpGUay65t7qGCYVBWvAtNbE7va0hKKcoZ9XMkwoSvZikPb+vhbDXkXJfpqmlmGvoqChW1cz7FMUNDSkbv1EI2y34kKu+5K2JSYMfewq20j2lzpKLSnVzGy7asuCMaxs2PXP1HTQlt+H01hpxrmW+mU1w5Huh7T6g8pnGopgn2H/TyX4bkFrglb4bkF8Be40tIf+PxQzpHZ5q3vHD9TzlR2GIRFBMUOyYFeuLSkoY2jP9IMIDw1zNpz+/tL6crcG03P6h88zzIhgom5x/otnCttO5h+rsoMkg9QtRl57yopgwpDn2E4ew9QPx2yY2ui/0WqYeYnO1BrmCyo1JAjqNMy+B29oNKREUKUhTVChIVFQnyFVUJ0haZH5jTJDcgQVGd7PWxS8d6kxnB2CLYigJsPZflH/3NO4DAv54YZjescvpjdPc1pX5+N9xzVqIMPQeFefaOOadfClRL7UhTfGOMrkvN20ZyrcHSc+F8P8gNkmxk1+Ps30ZwwRm01UGtL6SzUa0vpLNRpSe9kLkexN5LkRD1r6SzUaMs0vFbxKmWJ4EexN5BmcKDkLmnakpBi5ed7uyGP4ITeTnWmumdzrE9dc/dlZyDD+4jK8CH0cgWkE7Y2jyJbImow9CSgWDSb7D0Xu1cZzraPfNIFzz/Bhy18veGlt/CM5wNDSf4hB4ptdV/aHdnvrI90O/OG1ZTOJeg8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAICTT5pRZct0evs5AAAAAElFTkSuQmCC" alt="Alternate Text" />
+                                </div>
+
+
+                                <div class="entry-text-wrap " data-leng="27">
+                                   @item.Aciklama
+                                </div>
+
+
+                                <div class="entry-options yeni ">
+                                    <div style="display: inline-block;float: right;">
+                                        @foreach (var x in Model.TBL_Kullanici)
+                                        {
+                                            if (item.Kullanici_ID == x.ID)
+                                            {
+
+                                                <a class="username" style="display:inline-block; clear:both; float:none;" href="/Home/Kullanici_Detay/@x.ID">@x.KAD</a>
+                                            }
+
+                                        }
+                                        <br />
+                                        <a href="index.html" style="display:inline-block; float:none; clear:both;" class="entry-tarih"><small>@item.Eklenme_Tarihi.ToString("dd/MM/yyyy")</small></a>
+                                        <div class="clearfix"></div>
+                                    </div>
+
+                                </div><!-- entry-options -->
+
+                            </div><!-- entry-text clearfix -->
+                        </li><!-- entry wbox entry_210099612 -->
+
+
+                    </ol><!-- entry-list -->
+                }
+
+                @if (Session["KID"] != null)
+                {
+                    <br />
+                    foreach (var item in Model.TBL_Konu_Secili)
+                    {
+                        <form method="post" action="/Home/Yorum_Yap">
+                            <div class="col-md-12">
+                                <input type="hidden" name="Konu_ID" value="@item.ID" />
+                                @Html.TextAreaFor(m => m.TBL_Entri_Duzenle.Aciklama, new { @class = "form-control" })
+                                <br />
+                                <button type="submit" class="btn btn-info col-md-12">Yorum Yap</button>
+                            </div>
+                        </form>
+                    }
+                }
+                else
+                {
+                    <br />
+                    <div class="alert alert-danger" role="alert">
+                        Lütfen Giriş Yapınız.. 
+                    </div>
+                }
+            </div>
+    <div id="sidebar" class="col-md-3">
+
+
+
+
+
+
+
+                <!-- <div class="wbox baslik_theme1">
+
+                 </div>
+                 -->
+                <!--<div class="wbox baslik_theme1">
+
+
+                        <a href="//openad.ulu.so/tikla/?c=wsop-inci-yeni&r=6&gno=" target="_blank"><img src="/zlib/theme/wsop/wbanner.jpg"></a>
+                        <div style="display: none">
+
+
+                        </div>
+
+                                    <a href="//openad.ulu.so/tikla/?c=wsop-inci-yeni&r=6&gno=" target="_blank"><img src="/zlib/theme/wsop/wbanner.jpg"></a>
+
+
+                        <div class="clearfix"></div>
+
+
+
+
+
+                -->
+                <!-- Sağ Kısım 300x250
+                        <style>
+                            edia (max-width: 768px) {
+                                .sag300{
+                                    text-align: center;
+                                    background: none!important;
+                                    box-shadow: unset!important;
+                                }
+                            }
+                        </style>
+                         <div class="wbox baslik_theme1 sag300" style="background: none!important;">
+
+                           </div>
+                -->
+
+
+
+
+                <div style="clear:both;"></div>
+
+                <div class="altinci_sidebar wbox">
+                    <h5 class="wbox_title">Kategoriler</h5>
+                    <ul>
+                        @foreach (var item in Model.TBL_Kategori)
+                        {
+                            <li>
+
+                                <div class="li-bgimage" style="background-image:url(/Anasayfa_Assest/c12.incisozluk.com.tr/res/incisozluk/11507/1/747571_ma220.jpg)"></div>
+                                <div class="li-icerik">
+
+                                    <a href="/Home/Kategori_Detay/@item.ID" style="">
+                                        @item.Ad <small>(60002)</small>
+                                    </a>
+                                </div>
+
+                            </li>
+                        }
+
+                    </ul>
+                </div>
+
+            </div>
+        </div><!-- row fluid sonu esneklik veriyor-->
+    </div>
+</div>
+
